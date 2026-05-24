@@ -7,7 +7,7 @@
 # ============================================
 
 import asyncio
-import 
+import os
 import qrcode
 import io
 from datetime import datetime
@@ -17,11 +17,9 @@ from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
-# ============================================
-# НАСТРОЙКИ
-# ============================================
-BOT_TOKEN = "8625852662:AAEmNdqBnJ0RM5WR55wP-EeceDqNEAk8i1k"
-ADMIN_ID = = 5068081976
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
 # ============================================
